@@ -54,14 +54,16 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'localhost'
-            'database'  => 'sinasico_netcloud'
-            'username'  => 'sinasico_net'
-            'password'  => 'Net-Cloud123'
+            'host'      => 'localhost',
+            'database'  => 'sinasico_netcloud',
+            'username'  => 'sinasico_net',
+            'password'  => 'Net-Cloud123',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix'    => '',            
             'strict'    => false,
+            //socket para mysql con lampp
+            'unix_socket' =>  '/opt/lampp/var/mysql/mysql.sock'
         ],
 
         'pgsql' => [
