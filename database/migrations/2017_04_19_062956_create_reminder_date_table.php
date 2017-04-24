@@ -16,7 +16,7 @@ class CreateReminderDateTable extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->string('client_id');
-            $table->string('description');            
+            $table->string('description')->nullable();            
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateReminderDateTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('reminder');
     }
 }

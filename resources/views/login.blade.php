@@ -1,58 +1,63 @@
-@extends('layout')
+@extends('layout_index')
 
 @section('content')
 
-
-
-<div class="preloader"></div>
-	    
-	<main id="top" class="masthead" role="main">
-		<div class="container">
-			<div class="logo"> 	</div>
- 
-			<h1>Bienvenido a <strong>Sinasi Cloud</strong> </h1>
- 
-			<div class="row">
-				<div class="col-md-6 col-sm-12 col-md-offset-3 subscribe">
-					<form class="form-horizontal" role="form" action="{{ url('login') }}" id="subscribeForm" method="POST">
-					{!! csrf_field() !!}
-						<div class="form-group">
-							<div class="col-md-7 col-sm-6 col-sm-offset-1 col-md-offset-0" id="">
-								<input class="form-control input-lg" name="email" type="email" id="address" placeholder="Email" data-validate="validate(required, email)" required="required">
-							</div>
-
-							<div class="col-md-7 col-sm-6 col-sm-offset-1 col-md-offset-0" id="ip">
-								<input class="form-control input-lg" name="password" type="password" id="address" placeholder="Contraseña" required="required">
-							</div>
-
-							<div class="col-md-5 col-sm-4" id="btn">
-								<button type="submit" class="btn btn-success btn-lg">Ingresar</button>
-							</div>
-						</div>
-					</form>
-					<span id="result" class="alertMsg"></span> 
-				</div>
-			</div>				
-		</div><! --/container -->
-	</main><! --/main -->
-
-	<style type="text/css">
-		.logo{
-
-			font-family: sans-serif;
-    		font-size: 46px;
-		}
-
-		#ip{
-
-			margin-top: 43px;
-		}
-
-		#btn{
-
-			margin-bottom: 20%; */
-		}
-
-	</style>
-
-@endsection
+    <div class="top-content">
+        
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1><strong>Sinasi Cloud</strong></h1>
+                        <div class="description">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Ingreso al Sistema</h3>
+                                <p>Ingresa con tu email y contraseña.</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" method="post" class="login-form" action="{{ url('login') }}">
+                            {!! csrf_field() !!}
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Email</label>
+                                    <input type="text" name="email" placeholder="Email" class="form-username form-control" id="form-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Contraseña</label>
+                                    <input type="password" name="password" placeholder="Contraseña" class="form-password form-control" id="form-password">
+                                </div>
+                                <button type="submit" class="btn">Entrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 social-login">
+                        <h3>Visitanos</h3>
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-2" href="https://www.facebook.com" TARGET="_new">
+                                <i class="fa fa-facebook"></i> Facebook
+                            </a>
+                        
+                            <a class="btn btn-link-2" href="http://www.google.com" TARGET="_new">
+                                <i class="fa fa-google-plus"></i> Google Plus
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection    

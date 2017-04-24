@@ -16,16 +16,20 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->string('unit_m');
+            $table->string('unit_m')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('color')->nullable();
+            $table->string('measure_a')->nullable();
+            $table->string('measure_b')->nullable();
+            $table->string('measure_c')->nullable();
+            $table->string('measure_d')->nullable();
             $table->string('service_article');
-            $table->string('unit_price');
+            $table->string('unit_price')->nullable();
+            $table->string('type_material')->nullable();
+            $table->string('cost')->nullable();
 
-            $table->string('iva');
-            $table->string('tax_code_iva');
-            $table->string('isr_detained');
-            $table->string('tax_code_isr');
-            $table->string('iva_detained');
-            $table->string('tax_code_iva_d');          
+            $table->string('iva')->nullable();
+            $table->string('tax_code_iva')->nullable();                     
         });
     }
 
@@ -36,6 +40,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('articles');
     }
 }

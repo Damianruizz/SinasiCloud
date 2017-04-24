@@ -16,9 +16,10 @@ class CreateTracingTable extends Migration
         Schema::create('tracing', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->string('comment');
+            $table->string('comment')->nullable();
             $table->string('id_client');
             $table->string('id_user');
+            $table->string('visibility_type')->nullable();
             $table->timestamps();            
         });
     }
@@ -31,6 +32,6 @@ class CreateTracingTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('tracing');
     }
 }

@@ -33,7 +33,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        //$this->middleware('guest', ['except' => 'getLogout']);
     }
 
     /**
@@ -78,11 +78,22 @@ class AuthController extends Controller
         {
             // Si nuestros datos son correctos mostramos la página de inicio
             //return View::make("admin/hello", array("companies" => $companies));
-            return dd("Paso");
+            return view('admin/welcome');
         } else {
             //return View::make("welcome", array("companies" => $companies));
-            return dd("No Paso");
+            return view('login');
         }
         // Si los datos no son los correctos volvemos al login y mostramos un error
+    }
+
+    public function logOut()
+    {
+      // Cerramos la sesión
+      if (Auth::check()){
+        
+        Auth::logout();
+        // Volvemos al login y mostramos un mensaje indicando que se cerró la sesión
+        return view('login');
+      }
     }
 }

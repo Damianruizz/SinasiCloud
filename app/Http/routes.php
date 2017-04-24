@@ -15,4 +15,18 @@ Route::get('/', function () {
     return view('login');
 });
 
+//Login
 Route::post('login', 'Auth\AuthController@postLogin'); // Verificar datos
+Route::get('logout', 'Auth\AuthController@logOut');
+
+//Client
+Route::get('client_index', 'ClientController@index');
+Route::get('client_create', 'ClientController@create');
+
+
+Route::get('clientd/{client}', 'ClientController@destroy');
+
+Route::get('client_edit/{company}', ['uses' => 'CompanyController@edit', 'as' => 'client_edit']);
+
+//Concept
+Route::get('concept_index', 'ConceptController@index');

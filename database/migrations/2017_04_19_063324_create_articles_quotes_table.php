@@ -15,7 +15,14 @@ class CreateArticlesQuotesTable extends Migration
         Schema::create('articles_quotes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('id_quote');
-            $table->string('id_article');            
+            $table->string('id_article'); 
+            $table->string('quantity');
+            $table->string('discoint')->nullable();
+            $table->string('amount');
+            $table->string('description1')->nullable();
+            $table->string('description2')->nullable();
+            $table->string('description3')->nullable();
+            $table->string('description4')->nullable();
         });
     }
 
@@ -26,6 +33,6 @@ class CreateArticlesQuotesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('articles_quotes');
     }
 }

@@ -14,10 +14,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('a_patern');
-            $table->string('a_matern');
-            $table->string('admin');
+            $table->string('name')->nullable();
+            $table->string('a_patern')->nullable();
+            $table->string('a_matern')->nullable();
+            $table->string('admin')->nullable();
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->rememberToken();
@@ -32,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('users');        
     }
 }

@@ -16,18 +16,21 @@ class CreateClientTable extends Migration
 
             $table->increments('id');
             $table->string('name');
-            $table->string('rfc');
-            $table->string('street');
-            $table->string('delegation');            
-            $table->string('colony');
-            $table->string('cp');
-            $table->string('num_int');
-            $table->string('num_ext');
-            $table->string('tel1');
-            $table->string('tel2');
-            $table->string('email');
-            $table->string('web_page');
-            $table->string('tax_regime');
+            $table->string('rfc')->nullable();
+            $table->string('cp')->nullable();
+            $table->string('state')->nullable();
+            $table->string('delegation')->nullable();            
+            $table->string('colony')->nullable();
+            $table->string('street')->nullable();                                                
+            $table->string('num_int')->nullable();
+            $table->string('num_ext')->nullable();
+            $table->string('tel1')->nullable();
+            $table->string('tel2')->nullable();
+            $table->string('contact')->nullable();
+            $table->string('email')->nullable();
+            $table->string('email2')->nullable();
+            $table->string('web_page')->nullable();
+            $table->string('tax_regime')->nullable();
         });
     }
 
@@ -38,6 +41,7 @@ class CreateClientTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('client');
     }
 }
+
